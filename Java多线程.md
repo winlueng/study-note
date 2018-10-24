@@ -67,3 +67,17 @@
 
 ##### ps: java.lang.Object类中提供wait()和notify()方法. 
 
+#### 十一. concurrent并发包
+**11.1** 为保证线程的同步, 同时避免死锁, 兼顾并发性能, 从而在jdk5增加java.util.concurrent并发包
+##### 主要包括:
+> 1. 用于线程同步的==Lock外部锁接口==
+> 2. 用于线程通信的==Condition条件接口==
+> 3. 支持异步运算的==Callable接口==和==Future接口==. (所谓异步运算, 是指线程A负责运算, 线程B等待获取线程A的运算结果)
+> 4. 利用线程池来搞笑管理多个线程的==Executors类==和==Executors接口==
+> 5. 支持线程同步的==BlockingQueue==阻塞队列接口
+> 6. 线程安全的集合
+
+
+**11.2** 用于线程同步的Lock外部锁
+
+每个java对象都有一个 用于同步的锁, 但这实际上是概念上的锁. 而在java.util.cuncurrent.locks包中, Lock接口及它的实际类专门表示用于同步的锁.
